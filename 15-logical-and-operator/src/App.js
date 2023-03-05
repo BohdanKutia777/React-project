@@ -8,10 +8,10 @@ function App() {
   const incrementCount = () => {
     setCount(count + 1);
   };
-  // const resetCount = () => {
-  //   setCount(0);
-  // };
-  // const buttonStyle = { backgroundColor: 'blue', color: 'white' };
+  const resetCount = () => {
+    setCount(0);
+  };
+  const buttonStyle = { backgroundColor: 'blue', color: 'white' };
 
   return (
     <div className="App">
@@ -20,13 +20,13 @@ function App() {
       <Button onClick={incrementCount} />
       <Button onClick={incrementCount} />
       <Button onClick={incrementCount} />
-      {/* {count > 0 && (
+      {count > 0 && (
         <div>
           <button style={buttonStyle} onClick={resetCount}>
             Reset
           </button>
         </div>
-      )} */}
+      )}
     </div>
   );
 }
