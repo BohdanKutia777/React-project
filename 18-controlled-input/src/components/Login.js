@@ -1,11 +1,16 @@
-function Login(params) {
+import { useState } from 'react';
+
+function Login() {
+  const [data, setData] = useState({ userName: '', password: '' });
+
   function handleFormSubmit(event) {
     event.preventDefault();
-    const userData = {
-      username: event.target.username.value,
-      password: event.target.password.value,
-    };
-    alert(JSON.stringify(userData));
+
+    alert(JSON.stringify(data));
+  }
+
+  function handleInputChange(e, name) {
+    setData({ ...data, [name]: e.target.value });
   }
   return (
     <>
@@ -13,11 +18,19 @@ function Login(params) {
       <form onSubmit={handleFormSubmit}>
         <label>
           Username:
-          <input type="text" name="username" />
+          <input
+            type="text"
+            onChange={(e) => setData(handleInputChange(e, 'userName'))}
+            value={data.userName}
+          />
         </label>
         <label>
           Password:
-          <input type="password" name="password" />
+          <input
+            type="password"
+            onChange={(e) => handleInputChange(e, 'password')}
+            value={data.password}
+          />
         </label>
         <button type="submit">Login</button>
       </form>
