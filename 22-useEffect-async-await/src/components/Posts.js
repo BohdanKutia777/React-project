@@ -7,14 +7,26 @@ function Posts() {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
-  console.log(posts);
   useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((posts) => setPosts(posts))
-      .catch((error) => setError(error.message))
-      .finally(() => setIsLoading(false));
+    (async function () {
+      try {
+        const res = await fetch(API_URL);
+        const posts = await res.json();
+        setPosts(posts);
+      } catch (error) {
+        setError(error.message);
+      }
+      setIsLoading(false);
+    })();
   }, []);
+
+  // useEffect(() => {
+  //   fetch(API_URL)
+  //     .then((res) => res.json())
+  //     .then((posts) => setPosts(posts))
+  //     .catch((error) => setError(error.message))
+  //     .finally(() => setIsLoading(false));
+  // }, []);
 
   if (error) {
     return <h1 style={{ color: 'white' }}>Error: {error}</h1>;
