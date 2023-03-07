@@ -8,7 +8,9 @@ function App() {
       <div className="info">
         <h1>App component</h1>
         <button className="my-button">App component button</button>
-        <h2>Heading in the Info component</h2>
+        <h2>
+        Heading in the Info component
+        </h2>
       </div>
     </div>
   );
