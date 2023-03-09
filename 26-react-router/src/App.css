@@ -2,6 +2,12 @@
   text-align: center;
 }
 
+.activeLink {
+  color: lightyellow;
+  text-decoration: none;
+  background-color: black;
+}
+
 h1 {
   font-size: 90px;
   margin-top: 20px;
@@ -16,7 +22,17 @@ button {
   cursor: pointer;
 }
 
+
+nav {
+  background-color: darkslategray;
+  padding: 5px;
+}
+
+nav a {
+  margin: 15px;
+}
+
 a {
   color: lightblue;
-  font-style: 35px;
+  font-size: 35px;
 }
