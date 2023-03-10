@@ -36,3 +36,14 @@ a {
   color: lightblue;
   font-size: 35px;
 }
+
+.containerCourses {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.active {
+  margin: 10px;
+  border: 2px solid black;
+}

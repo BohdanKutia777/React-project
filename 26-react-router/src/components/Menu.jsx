@@ -14,15 +14,21 @@ const Menu = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) => (isActive ? 'activeLink' : 'link')}
-        to="/about"
+        to="about"
       >
         About
       </NavLink>
       <NavLink
         className={({ isActive }) => (isActive ? 'activeLink' : 'link')}
-        to="/contacts"
+        to="contacts"
       >
         Contacts
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? 'activeLink' : 'link')}
+        to="/courses"
+      >
+        Courses
       </NavLink>
     </nav>
   );
