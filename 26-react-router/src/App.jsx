@@ -33,7 +33,7 @@ function App() {
               element={<Courses />}
             />
             <Route
-              path="courses:slug"
+              path="courses/:courseSlug"
               element={<SingleCourses />}
             />
             <Route

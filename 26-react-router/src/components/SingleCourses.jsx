@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import courses from '../data/courses';
-import NotFound from './NotFound';
 
 const SingleCourses = () => {
-  const { slug } = useParams();
+  const params = useParams();
   const navigate = useNavigate();
-  const course = courses.find((el) => el.slug === slug);
+  const course = courses.find((el) => el.slug === params.courseSlug);
   //   if (!course) {
   //     return <NotFound />;
   //   }
@@ -15,7 +14,7 @@ const SingleCourses = () => {
     if (!course) {
       navigate('..', { relative: 'path' });
     }
-  }, [course]);
+  }, [course, navigate]);
   return (
     <>
       <h1>{course?.title}</h1>
