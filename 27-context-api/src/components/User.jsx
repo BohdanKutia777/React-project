@@ -1,7 +1,7 @@
 import UserInfo from './UserInfo';
 
-const User = ({ user }) => {
-  return <UserInfo user={user} />;
+const User = () => {
+  return <UserInfo />;
 };
 
 export default User;
