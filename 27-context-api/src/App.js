@@ -1,6 +1,16 @@
 import './App.css';
+import { useState } from 'react';
+import User from './components/User';
+import UserContext from './context/UserContext';
 
 function App() {
-  return <div className="App"></div>;
+  const [user, setUser] = useState('Bohdan');
+  return (
+    <UserContext.Provider value={user}>
+      <div className="App">
+        <User />
+      </div>
+    </UserContext.Provider>
+  );
 }
 export default App;
